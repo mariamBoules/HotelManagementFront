@@ -1,0 +1,43 @@
+<html>
+    
+        <link rel="stylesheet" href="style.css">
+        <img src = "images/hotel-california.jpg" alt = "Spooky hotel" > 
+
+        <h1>
+            Welcome to Hotel California !
+        </h1>
+        <h2>
+            Such a lovely place ... Such a lovely face
+        </h2>
+        <form id = "login-form">
+            <div>
+              <label for="uname"><b>Username&ensp;</b></label>
+              <input type="text" placeholder="Enter Username" id="username" required>
+          <br/><br/>
+              <label for="psw"><b>Password&ensp;</b></label>
+              <input type="password" placeholder="Enter Password" id="password" required>
+              <br /><br />
+              <button type="submit">Login</button>              
+            </div>
+
+          </form>
+          <script>
+            const form = document.getElementById('login-form');
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const uname = username.value;
+                const pwd = password.value;
+                localStorage.setItem('username' ,uname);
+                localStorage.setItem('password', pwd);
+
+                window.location.href = "roomSearch.html"
+                
+            })
+
+            
+        </script>
+
+</html>

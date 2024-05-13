@@ -1,0 +1,54 @@
+
+<html>
+    <link rel="stylesheet" href="homeStyle.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Search Form</title>
+
+</head>
+<body>
+    <h1>
+        Hello <span id = "username" ></span>
+    </h1>
+</body>
+    <form action="/searchRooms" method="POST">
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType">
+            <option value="suite">Suite</option>
+            <option value="double">Double</option>
+            <option value="single">Single</option>
+        </select>
+
+        <label for="wifi">WiFi:</label>
+        <input type="checkbox" id="wifi" name="wifi" value="true"> 
+
+        <label for="tv">TV:</label>
+        <input type="checkbox" id="tv" name="tv" value="true"> 
+
+        <label for="roomView">Room View:</label>
+        <select id="roomView" name="roomView">
+            <option value="sea">Sea</option>
+            <option value="pool">Pool</option>
+            <option value="garden">Garden</option>
+        </select>
+
+        <label for="beds">Number of Beds:</label>
+        <input type="number" id="beds" name="beds" min="1" max="10">
+
+        <label for="roomService">Room Service:</label>
+        <input type="checkbox" id="roomService" name="roomService" value="true"> 
+
+        <label for="airConditioning">Air Conditioning:</label>
+        <input type="checkbox" id="airConditioning" name="airConditioning" value="true"> 
+
+        <label for="priceRange">Price Range:</label>
+        <input type="text" id="priceRange" name="priceRange" placeholder="e.g. 100-300">
+
+        <button type="submit">Search Rooms</button>
+    </form>
+    <script>
+        const username = localStorage.getItem('username');
+        document.getElementById('username').textContent = username;
+    </script>
+
+</html>
