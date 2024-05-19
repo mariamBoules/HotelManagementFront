@@ -71,7 +71,3 @@ This repository contains the implementation of a room reservation system that al
 
 10. **Refund Policy**
     - Users shall receive a full refund on cancellation before one week of the check-in date.
-
-
-
-
