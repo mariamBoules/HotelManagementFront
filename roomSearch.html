@@ -17,6 +17,9 @@
 </head>
 
 <body>
+
+
+
   <h1>
     Hello <span id="username"></span>
   </h1>
@@ -209,6 +212,9 @@
         formatter: function (value) {
           return value === true ? 'Yes' : 'No';
         }
+      },{
+        field: 'RoomsLeft',
+        title: 'Rooms Left'
       }],
       onClickRow: function (row, $element, field) {
                     const queryString = Object.keys(row)
@@ -232,7 +238,8 @@
         "price": "1500",
         "Wifi": true,
         "roomService": false,
-        "AirConditioner": true
+        "AirConditioner": true,
+        "RoomsLeft": 2
       },
       {
         "NoBeds": "3",
@@ -240,7 +247,8 @@
         "price": "1800",
         "Wifi": true,
         "roomService": false,
-        "AirConditioner": false
+        "AirConditioner": false,
+        "RoomsLeft": 3
       },
       {
         "NoBeds": "5",
@@ -248,7 +256,8 @@
         "price": "5000",
         "Wifi": false,
         "roomService": false,
-        "AirConditioner": false
+        "AirConditioner": false,
+        "RoomsLeft": 5
       },
       {
         "NoBeds": "2",
@@ -256,7 +265,8 @@
         "price": "2000",
         "Wifi": true,
         "roomService": false,
-        "AirConditioner": false
+        "AirConditioner": false,
+        "RoomsLeft": 6
       },
       {
         "NoBeds": "1",
@@ -264,7 +274,8 @@
         "price": "1600",
         "Wifi": true,
         "roomService": true,
-        "AirConditioner": false
+        "AirConditioner": false,
+        "RoomsLeft": 5
       }
     ]; 
 </script>

@@ -24,9 +24,10 @@
               <button type="submit">Login</button>            
             </div>
           </form>
-
-          <form id = "signup-form">
-            <button type="submit">or sign-up</button> 
+          OR
+        <br /><br />
+          <form id = "signup-redirect">
+            <button type="submit">sign-up</button> 
           </form>
            
           <script>
@@ -42,9 +43,8 @@
                 localStorage.setItem('password', pwd);
 
                 window.location.href = "roomSearch.html"
-                
             })
-            const form2 = document.getElementById('signup-form');
+            const form2 = document.getElementById('signup-redirect');
             form2.addEventListener('submit', function(e){
                 e.preventDefault();
                 window.location.href = "signup.html"
