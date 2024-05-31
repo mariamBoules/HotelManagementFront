@@ -13,55 +13,31 @@
         
         <form id = "signup-form">
             <div class="col-md-6">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name" required>
+                <label for="FullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="FullName" required>
               </div>
               <div class="col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
+                <label for="Mail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Mail" required>
               </div>
             <div class="col-md-6">
-                <label for="Username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" required>
+                <label for="MobileNumber" class="form-label">Mobile</label>
+                <input type="text" class="form-control" id="MobileNumber" required> 
               </div>
               <div class="col-md-6">
-                <label for="dob" class="form-label">Date of Birth</label>
-                <input type="date" class="form-control" id="dob" required>
-              </div>
+                <label for="BirthDate" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="BirthDate" required>
+              </div>            
           <div class="col-md-6">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" required>
+            <label for="Gender" class="form-label">Gender</label>
+            <input type="Gender" class="form-control" id="Gender" required>
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Password" required>
           </div>
               <br /><br />
-              <button type="submit">Sign Up</button> 
-              </form>
-<script>
-                const form = document.getElementById('signup-form');
-                const username = document.getElementById('username');
-                const password = document.getElementById('password');
-                const name = document.getElementById('name');
-                const email = document.getElementById('email');
-                const dob = document.getElementById('dob');
-              form.addEventListener('submit', function(e) {
-                  e.preventDefault();
-                  
-                  const uname = username.value;
-                  const pwd = password.value;
-                  const email = email.value;
-                  const name = name.value;
-                  const dob = dob.value;
-                  localStorage.setItem('username' ,uname);
-                  localStorage.setItem('password', pwd);
-                  localStorage.setItem('name', name);
-                  localStorage.setItem('dob', dob);
-                  localStorage.setItem('email', email);
-  
-                  window.location.href = "roomSearch.html"
-                  
-              })
-</script>
-              
-
-
+              <button id="submit" onclick="submitForm()">Sign Up</button> 
+              <script src="signup.js"></script>  
+          </form>
+                    
 </html>
 
