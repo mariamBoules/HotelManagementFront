@@ -31,6 +31,13 @@
         <input type="date" class="form-control" id="dob" required>
     </div>
     <div class="col-md-6">
+        <label for="gender" class="form-label">Gender</label>
+        <select id="gender" class="form-select">
+            <option selected>Male</option>
+            <option>Female</option>
+          </select>
+    </div>
+    <div class="col-md-6">
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" required>
     </div>
@@ -46,6 +53,7 @@
     var email = document.getElementById('email').value;
     var name = document.getElementById('name').value;
     var dob = document.getElementById('dob').value;
+    var gender = document.getElementById('gender').value;
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -54,6 +62,7 @@
         localStorage.setItem('name', name);
         localStorage.setItem('dob', dob);
         localStorage.setItem('email', email);
+        localStorage.setItem('gender', gender);
 
         window.location.href = "index.html"
 
