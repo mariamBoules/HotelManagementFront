@@ -1,34 +1,19 @@
-const form2 = document.getElementById('signup-form');
-form2.addEventListener('submit', function(e){
-    e.preventDefault();
-    window.location.href = "signup.html"
-})
-
-async function submitForm() {
-  var fullName = document.getElementById('FullName').value;
-  var mail = document.getElementById('Mail').value;
+async function login() {
   var mobileNumber = document.getElementById('MobileNumber').value;
-  var password = document.getElementById('Password').value;
-  var birthDate = document.getElementById('BirthDate').value;
+  var password = document.getElementById('password').value;
 
   // Check if the input field is empty
   if (
-    fullName.trim() === '' ||
-    mail.trim() == '' ||
     mobileNumber.trim() == '' ||
-    password.trim() == '' ||
-    birthDate.trim() == ''
+    password.trim() == ''
   ) {
     alert('Please fill all fields');
     return false; // Prevent the form submission
   }
   try {
     const requestBody = {
-      FullName: fullName,
-      Mail: mail,
       MobileNumber: mobileNumber,
       Password: password,
-      BirthDate: birthDate,
     };
     const requestHeaders = {
       'Content-Type': 'application/json',
@@ -40,7 +25,8 @@ async function submitForm() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000); // Timeout set to 5 seconds (5000 milliseconds)
 
-    const endpointUrl = 'http://localhost:8080/register-user';
+    const endpointUrl = 'http://localhost:8080/sign-in';
+
 
     fetch(endpointUrl, {
       method: 'POST',
@@ -68,10 +54,9 @@ async function submitForm() {
         // Handle any errors that occurred during the fetch
         alert(error)
       });
-
   } catch (error) {
     alert(error);
     console.error('There was a problem with the fetch operation:', error);
   }
-  document.getElementById("signup-form").reset();
+  document.getElementById("login-form").reset();
 }

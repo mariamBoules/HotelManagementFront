@@ -1,57 +1,46 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-      </head>
 
-        <h1>
-            Hotel Management System
-        </h1>
-        
-        <form id = "login-form">
-            <div class="col-md-6">
-                <label for="Username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" required>
-              </div>
-          <br/><br/>
-          <div class="col-md-6">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" required>
-          </div>
-              <br /><br />
-              <button type="submit">Login</button>            
-            </div>
-          </form>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-          <form id = "signup-form">
-            <button type="submit">or sign-up</button> 
-          </form>           
-          <script>
-            const form = document.getElementById('login-form');
-            const username = document.getElementById('username');
-            const password = document.getElementById('password');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const uname = username.value;
-                const pwd = password.value;
-                localStorage.setItem('username' ,uname);
-                localStorage.setItem('password', pwd);
+<h1>
+  Hotel Management System
+</h1>
 
-                window.location.href = "roomSearch.html"
-                
-            })
-            const form2 = document.getElementById('signup-form');
-            form2.addEventListener('submit', function(e){
-                e.preventDefault();
-                window.location.href = "signup.html"
-            })
+<form id="login-form">
+  <div class="col-md-6">
+    <label for="MobileNumber" class="form-label">MobileNumber</label>
+    <input type="text" class="form-control" id="MobileNumber" required>
+  </div>
+  <br /><br />
+  <div class="col-md-6">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" required>
+  </div>
+  <br /><br />
+  <button type="submit" onclick="login()">Login</button>
+  <script src="signin.js"></script>
+  </div>
+</form>
 
+<form id="signup-form">
+  <button type="submit">sign-up</button>
+  <script src="signup.js"></script>
+</form>
 
-            
-        </script>
-
+<form id="sign-with-google" action="http://localhost:8080/oauth/login/google">
+  <button type="submit">Sign in with google</button>
+  <script>
+    const form2 = document.getElementById('sign-with-google');
+    form2.addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = "roomSearch.html"
+    })    
+  </script>
+</form>
 </html>
-
